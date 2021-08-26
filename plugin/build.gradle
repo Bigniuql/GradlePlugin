@@ -1,0 +1,28 @@
+plugins {
+  id 'maven'
+  id 'groovy'
+}
+
+dependencies {
+  implementation gradleApi()
+  implementation localGroovy()
+  implementation "com.android.tools.build:gradle:4.2.2"
+  implementation 'org.ow2.asm:asm:9.1'
+  implementation 'org.ow2.asm:asm-commons:9.1'
+}
+
+uploadArchives {
+  repositories{
+    mavenDeployer {
+      repository(url: uri('C:\\Users\\admin\\IdeaProjects\\maven'))
+      pom.groupId = 'com.nql.plugin'
+      pom.artifactId = 'MyPlugin'
+      pom.version = '0.0.27'
+    }
+  }
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+}
