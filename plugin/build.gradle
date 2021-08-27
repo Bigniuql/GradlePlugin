@@ -17,7 +17,7 @@ uploadArchives {
       repository(url: uri('C:\\Users\\admin\\IdeaProjects\\maven'))
       pom.groupId = 'com.nql.plugin'
       pom.artifactId = 'MyPlugin'
-      pom.version = '0.0.29'
+      pom.version = '0.0.1'
     }
   }
 }

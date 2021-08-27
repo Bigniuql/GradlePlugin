@@ -5,8 +5,8 @@ plugins {
   id 'kotlin-android'
   id 'kotlin-android-extensions'
 }
-//apply plugin: "com.nql.helloplugin.greeting"
-apply plugin: "com.nql.myplugin"
+
+//apply plugin: "com.nql.myplugin"
 
 android {
   compileSdkVersion 30

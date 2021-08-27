@@ -11,8 +11,10 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0"
-        classpath "com.nql.plugin:MyPlugin:0.0.29"
-        //classpath "com.nql.helloplugin:HelloPlugin:0.0.10"
+
+        // 发布插件后 打开 这行注释并在app中引入插件
+        //classpath "com.nql.plugin:MyPlugin:0.0.1"
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
