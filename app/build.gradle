@@ -1,4 +1,4 @@
-import com.nql.helloplugin.PersonTask
+
 
 plugins {
   id 'com.android.application'
@@ -35,11 +35,6 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
-}
-
-person {
-  name = "Gray"
-  age = 11
 }
 
 dependencies {

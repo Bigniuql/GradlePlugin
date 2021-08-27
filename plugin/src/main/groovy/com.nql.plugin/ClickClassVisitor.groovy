@@ -1,13 +1,14 @@
 package com.nql.plugin
 
-import com.android.ddmlib.Log
+
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.MethodVisitor
 
 public class ClickClassVisitor extends ClassVisitor {
 
 
-    private static final METHOD = "onResume"
+    private static final CLICK_METHOD = "onClick"
+    private static final RESUME_METHOD = "onResume"
 
     ClickClassVisitor(int api) {
         super(api)
@@ -23,9 +24,12 @@ public class ClickClassVisitor extends ClassVisitor {
         MethodVisitor methodVisitor = super.visitMethod(access, name, descriptor, signature, exceptions)
         println "method:$name"
         //找到onClick方法
-        if (name.startsWith(METHOD)) {
+        if (name.startsWith(CLICK_METHOD)) {
+            return new ClickToastVisitor(api, methodVisitor)
+        } else if (name.startsWith(RESUME_METHOD)) {// 找到OnResume方法
             return new ClickLogVisitor(api, methodVisitor)
+        } else {
+            return methodVisitor
         }
-        return methodVisitor
     }
 }
